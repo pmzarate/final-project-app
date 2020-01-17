@@ -1,19 +1,15 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
 import {
       Button,
       TextField,
       Dialog,
-      DialogContent
+      DialogContent,
+      Menu,
+      ListItemIcon
       } from '@material-ui/core'
-  
-// import { Container, Paper, Chip } from '@material-ui/core'
-// import GoogleMapReact from 'google-map-react'
-// import Geocode from 'react-geocode'
-// // import LocationOnIcon from '@material-ui/core/LocationOn'
-// import Geocoder from 'react-native-geocoding'
-
-// Geocoder.init("REACT_APP_KEY", {language : "en"});
-
+import SendIcon  from '@material-ui/icons/Send'
+      
 class ReportPage extends Component {
   state = {
     open: false,
@@ -22,7 +18,8 @@ class ReportPage extends Component {
     lat: '',
     lng: '',
     marker: '',
-    timestamp: ''
+    timestamp: '',
+    id: 0
   }
 
 
@@ -37,10 +34,10 @@ class ReportPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-  const newReport = { ...this.state}
-  newReport.id = this.props.incidentReport +1
-  this.props.incidentReport(newReport)
-  this.props.history.push('/')
+    const newReport = { ...this.state }
+    newReport.id = this.props.incidentReport[this.props.incidentReport.length - 1].id + 1
+    this.props.addIncidentReport(newReport)
+    this.props.history.push('/')
   }
 
 
@@ -80,31 +77,58 @@ class ReportPage extends Component {
             </Button>
           </div>
           <div>
+          <Menu
+                        elevation={0}
+                        getContentAnchorEl={null}
+                        anchorOrigin={{
+                          vertical: 'bottom',
+                          horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                          vertical: 'top',
+                          horizontal: 'center',
+                        }}
+                      >
+                        <ListItemIcon>
+                          <SendIcon fontSize="small" />
+                        </ListItemIcon>
+
+                        <ListItemIcon>
+                          <SendIcon fontSize="small" />
+                        </ListItemIcon>
+  
+                        <ListItemIcon>
+                          {/* <InboxIcon fontSize="small" /> */}
+                        </ListItemIcon>
+                      </Menu>
             <Dialog open={this.state.open}
             onClose={this.toggleDialog}>
               <DialogContent>
                 <form
                     onSubmit={this.handleSubmit}
-                              style={{ display: 'flex', flexDirection: 'column', width: '350px' }}>
-                              <TextField 
-                                  id="username" 
-                                  placeholder="Reported by" 
-                                  value={this.state.username}onChange={this.handleTextChange} 
-                                    required />
-                                <TextField 
-                                    id="comments" 
-                                    placeholder="Describe Incident" 
-                                    value={this.state.comments} 
-                                    onChange={this.handleTextChange} 
-                                    required />
-                                    <br />
-                                <Button 
-                                    variant="contained" 
-                                    className='geolcation' 
-                                    color="primary" 
-                                    type="submit"  
-                                    onClick={this.getLocation}
-                                    >Submit It</Button>         
+                    style={{ display: 'flex', flexDirection: 'column', width: '350px' }}>
+                  <TextField 
+                      id="username" 
+                      placeholder="Reported by" 
+                      value={this.state.username}onChange={this.handleTextChange} 
+                      required 
+                    />
+                    <TextField 
+                        id="comments" 
+                        placeholder="Describe Incident" 
+                        value={this.state.comments} 
+                        onChange={this.handleTextChange} 
+                        required 
+                      />
+              
+                        <br />
+                    <Button 
+                        variant="contained" 
+                        className='geolcation' 
+                        color="primary" 
+                        type="submit"  
+                        onClick={this.getLocation}
+                        >Submit It</Button>         
                 </form>
               </DialogContent>
             </Dialog>
@@ -114,5 +138,5 @@ class ReportPage extends Component {
   }
 }
 
-export default ReportPage
+export default withRouter(ReportPage);
 

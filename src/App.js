@@ -2,11 +2,9 @@ import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import ReportPage from './containers/ReportPage'
+import ViewMap from './containers/ViewMap';
 //import NavBar from './containers/NavBar'
-// import Router from './Router'
-// import { BrowserRouter } from 'react-router-dom'
-// import { Provider } from 'react-redux'
-// import store from './redux/store'
+
 
 
 function App() {
@@ -16,9 +14,10 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-        ATXcrement
+        alert ATX
         </p>
-        <ReportPage/>
+        <ReportPage/> 
+        <ViewMap />
         {/* <NavBar/> */}
         {/* this is how to make a link in your app 
         <a

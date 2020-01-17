@@ -4,10 +4,13 @@ export default {
         {
             username: '',
             comments: '',
-            lat: '',
-            lng: '',
+            location: {
+                lat: 0,
+                lng: 0
+            },
             marker: '',
-            timestamp: ''
+            timestamp: '',
+            id: 0
         }
     ]
 };

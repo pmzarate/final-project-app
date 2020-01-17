@@ -1,7 +1,7 @@
-export const addIncidentReport = (addIncidentReport) => {    
+export const addIncidentReport = (incidentReport) => {    
     return {
         type: 'ADD_REPORT',
-        value: addIncidentReport
+        value: incidentReport
     }
 }
 

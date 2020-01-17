@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-const addIncidentReport = ( state = [], action) => {
+const incidentReport = ( state = [], action) => {
     switch(action.type) {
         case 'ADD_REPORT':
             return [...state, action.value]
@@ -9,4 +9,4 @@ const addIncidentReport = ( state = [], action) => {
     }
 }
 
-export default combineReducers({addIncidentReport})
+export default combineReducers({incidentReport})

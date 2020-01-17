@@ -21,5 +21,5 @@ CREATE TABLE incidentReport (
     type MARKER,
     TIMESTAMP,
         ON DELETE CASCADE
-) ENGINE = MYISAM ;
+);
 
