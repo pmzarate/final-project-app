@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import ReportPage from '../components/ReportPage'
+import ReportWindow from '../components/ReportWindow'
 import { addIncidentReport } from '../redux/actions'
 
 const mapStateToProps = (state) => {
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReportPage)
+export default connect(mapStateToProps, mapDispatchToProps)(ReportWindow)

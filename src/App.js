@@ -1,9 +1,9 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import ReportPage from './containers/ReportPage'
+import ReportPage from './containers/ReportWindow'
 import ViewMap from './containers/ViewMap';
-//import NavBar from './containers/NavBar'
+import NavBar from './containers/NavBar'
 
 
 
@@ -12,13 +12,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <NavBar/>
         <p>
-        alert ATX
+        alertATX
         </p>
         <ReportPage/> 
-        <ViewMap />
-        {/* <NavBar/> */}
+        {/* <ViewMap /> */}
+       
         {/* this is how to make a link in your app 
         <a
           className="App-link"

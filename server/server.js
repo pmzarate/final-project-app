@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 //importing dummydata for testing server connection
 //const clients = require('./clientDemographics');
-const test = require('./practice')
+const test = require('./sql/practice')
 
 //require routes here
 
