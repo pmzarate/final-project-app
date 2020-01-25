@@ -1,39 +1,58 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography } from '@material-ui/core'
-import { Link } from 'react-router-dom'
+import { AppBar, Toolbar } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 import '../App.css'
 
 
 const NavBar = (props) =>  {
     const style = {
-        color: 'silver'
+        backgroundColor: 'black',
+        size: '30',
+        height: '50',
+        color: 'white',
+        textDecoration: 'none'
     }
 
-
 return (
-    <AppBar className = "appBar">
-            <Toolbar variant = 'standard'>
-                <Typography >
-                </Typography>
-                    {/* <ul className="navigation-list">
-                        <li className="nav-list-item">
-                        <Link to="/ViewMap" style={style}>View Current Map</Link> 
-                        </li>
-                        <li className="nav-list-item">
-                        <Link to="/ReportPage" style ={style}>Report Incident</Link>
-                        </li> */}
-                            {/* <li className="nav-list-item" onClick = {handleLogout}>
-                                <Link to ="/" style={style}>Log Out</Link>
-                            </li> */}
-                            {/* </>
+    <AppBar 
+        position="relative"
+        className="nav-list"
+        style={style}>
+            <Toolbar>
+
+                <ul 
+                    className="nav-list-item">
+                        <Link 
+                            to="/viewmap" 
+                            style={style}>
+                            View Current Map
+                        </Link>
+                </ul>
+                
+                <ul
+                    className="nav-list-item">
+                        <Link   
+                            to="/about"
+                            style={style}>
+                            About AlertATX
+                        </Link> 
+                </ul>
+                <ul
+                    className="nav-list-item">
+                        <Link 
+                            to="/login"
+                            style={style}>
+                            Log In
+                        </Link>
+                </ul>              
+                        {/* </>
                         ):(
                             <li className="nav-list-item">
                                 <Link to="/login" style={style}> Login</Link>
                             </li>
-                        )} 
-                     </ul>*/}
-                </Toolbar>  
-            </AppBar>
+                        )}  */}
+            </Toolbar>  
+    </AppBar>
     )
 }
 

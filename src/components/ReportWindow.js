@@ -4,17 +4,23 @@ import {
 	Button,
 	TextField,
 	Dialog,
-	DialogContent,
-	Menu,
-	ListItemIcon,
-	MenuItem
+	DialogContent
 } from "@material-ui/core";
-// import SendIcon from "@material-ui/icons/Send";
-// import { usePopupState, bindTrigger, bindMenu } from "material-ui-popup-state";
 
-// import PopupState from "material-ui-popup-state";
 import ReportMenu from "./ReportMenu";
 import ViewMap from "../containers/ViewMap";
+// import GoogleMapReact from 'google-map-react';
+// import Geocode from 'react-geocode';
+
+// import LocationOnIcon from "@material-ui/icons/LocationOn";
+// import BarrierIcon from "../alertatx_images/barrier.png";
+// import DebrisIcon from "../alertatx_images/debris.png";
+// import AnimalIcon from "../alertatx_images/animal.png";
+// import BioIcon from '../alertatx_images/biohazard.png'
+// import RestroomIcon from "../alertatx_images/restroom.png";
+// import TentIcon from "../alertatx_images/tent.png";
+// import StreetLightIcon from "../alertatx_images/streetlight.png";
+
 
 class ReportWindow extends Component {
 	state = {
@@ -77,10 +83,12 @@ class ReportWindow extends Component {
 
 	render() {
     if(this.state.lat !== ""){
+      console.log('this is the state on render ', this.state)
+
       return (
         <div>
         <p>Report Submitted</p>
-        <ViewMap/>
+        <ViewMap lat={this.state.lat} lng={this.state.lng}/>
         </div>
       )
     }
@@ -122,9 +130,9 @@ class ReportWindow extends Component {
                   required
                 />
                 <Button
-                  variant="contained"
+                  variant="primary"
                   className="geolcation"
-                  color="standard"
+                  color="secondary"
                   type="submit"
                   onClick={this.getLocation}
                 >

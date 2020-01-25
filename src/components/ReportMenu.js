@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
+import { Button, Divider } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
@@ -34,26 +34,27 @@ export default function ReportMenu(props) {
 			>
 				Make a Report
 			</Button>
-			<Menu
+		    	<Menu
 				id="report-menu"
 				anchorEl={anchorEl}
 				keepMounted
 				open={open}
 				onClose={handleClose}
 				TransitionComponent={Fade}
-			>
+			  	>
 	            <MenuItem onClick={() => {
 				    	props.toggleDialog();
 						props.toggleMarker("DebrisIcon");
 					}}
 				>
-					<img src={DebrisIcon} 
+					<img src={DebrisIcon}
 						width='20'
 						height='20'
+						alt="debris"
 						>
 					</img>Debris / Garbage
 				</MenuItem>
-
+			    	<Divider />
 				<MenuItem onClick={() => {
 						props.toggleDialog();
 						props.toggleMarker("StreetLightIcon");
@@ -61,10 +62,11 @@ export default function ReportMenu(props) {
 				>
 					<img src={StreetLightIcon} 
 						width='20'
-						height='20'>
+						height='20'
+						alt="streetlght">
 					</img>Street Light Outage
 				</MenuItem>
-
+			    	<Divider />
 				<MenuItem
 					onClick={() => {
 						props.toggleDialog();
@@ -73,10 +75,11 @@ export default function ReportMenu(props) {
 				>
 					<img src={AnimalIcon}
 					width='20'
-					height='20'>
-					</img>Animal Waste / Remains
+					height='20'
+					alt="animal">
+					</img>Animal Waste / Carcass
 				</MenuItem>
-			
+			     	<Divider />
 			    <MenuItem onClick={() => {
 						props.toggleDialog();
 						props.toggleMarker("BarrierIcon");
@@ -84,22 +87,23 @@ export default function ReportMenu(props) {
 				>
 					<img src={BarrierIcon} 
 						width='20'
-						height='20'>
+						height='20'
+						alt="barrier">
 					</img>Sidewalk / Trail Damage
 				</MenuItem>
-
-				
-				<MenuItem onClick={() => {
+		     		<Divider />
+			    <MenuItem onClick={() => {
 						props.toggleDialog();
 						props.toggleMarker("RestroomIcon");
 					}}
 				>
 					<img src={RestroomIcon} 
 						width='20'
-						height='20'>
+						height='20'
+						alt="restroom">
 					</img>Public Restroom Access
 				</MenuItem>
-
+				    <Divider />
 				<MenuItem onClick={() => {
 						props.toggleDialog();
 						props.toggleMarker("TentIcon");
@@ -107,10 +111,11 @@ export default function ReportMenu(props) {
 				>
 					<img src={TentIcon} 
 						width='20'
-						height='20'>
-					</img>Public Camping/ Vagrancy
+						height='20'
+						alt="tent">
+					</img>Public Camping / Vagrancy
 				</MenuItem>
-
+			    	<Divider />
 				<MenuItem onClick={() => {
 						props.toggleDialog();
 						props.toggleMarker("BioIcon");
@@ -118,8 +123,9 @@ export default function ReportMenu(props) {
 				>
 					<img src={BioIcon} 
 						width='20'
-						height='20'>
-					</img>Bio Hazard Material
+						height='20'
+						alt="bio">
+					</img>Bodily Fluids / Waste
 				</MenuItem>
 
 			</Menu>

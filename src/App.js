@@ -1,8 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import ReportPage from './containers/ReportWindow'
-import ViewMap from './containers/ViewMap';
+import ReportWindow from './containers/ReportWindow'
 import NavBar from './containers/NavBar'
 
 
@@ -13,11 +12,22 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar/>
-        <p>
-        alertATX
-        </p>
-        <ReportPage/> 
-        {/* <ViewMap /> */}
+      </header>
+        <div>
+            <h1>
+              alertATX
+            </h1>
+            <p>
+              <h2>
+              Stay ALERT
+              </h2>
+              <br/>
+              See Something...
+              Report It
+            </p>
+        </div>
+       
+     
        
         {/* this is how to make a link in your app 
         <a
@@ -28,7 +38,9 @@ function App() {
         >
           Learn React
         </a>*/}
-      </header>
+     
+      <br/>
+      <ReportWindow/> 
     </div>
   );
 }
