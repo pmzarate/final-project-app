@@ -9,6 +9,8 @@
   }
 }
 
+/* home page css */
+
 .App-header  {
   display: flex;
   align-items: center; 
@@ -39,6 +41,15 @@ p h2 {
   font-size:50px ;
 
 }
+
+/* about page css */
+
+.about-page {
+    background-image: linear-gradient(black, silver, black);
+    height: 1000px;
+  } 
+
+
 /* .App-link {
   color: #61dafb;
 } */

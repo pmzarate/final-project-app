@@ -7,8 +7,8 @@ export default class AboutPage extends Component {
 
     render() {
         return (
-            <div className="text-gray">
-                <Container maxWidth="sm">
+            <div className="about-page">
+                <Container>
                     {/* <h1 style={{ textAlign: 'center' }}>{this.state.heading}</h1> */}
                     <p>
                         FakeCars.com was created to solve a specific problem.
