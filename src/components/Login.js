@@ -7,8 +7,8 @@ export default class AboutPage extends Component {
 
     render() {
         return (
-            <div className="text-gray">
-                <Container maxWidth="sm">
+            <div className="login-page">
+                <Container >
                     {/* <h1 style={{ textAlign: 'center' }}>{this.state.heading}</h1> */}
                     <p>
                     still under construction

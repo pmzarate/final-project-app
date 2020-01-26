@@ -54,8 +54,8 @@ const ViewMap = props => {
 		// <div>console.log(mapProps.center)
 		// console.log(mapView) </div>
 		<Fragment>
-			<div className="alert-container">
-				<Container maxWidth="sm">
+			<div className="map-page">
+				<Container>
 					{mapView.map(item => {
 						let mark;
 						if (item.marker === "BarrierIcon") {

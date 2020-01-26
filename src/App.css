@@ -50,6 +50,15 @@ p h2 {
   } 
 
 
+.login-page {
+  background-image: linear-gradient(black, silver, black);
+  height: 1000px;
+}
+
+.map-page  {
+  background-image: linear-gradient(black, silver, black);
+  height: 1000px;
+} 
 /* .App-link {
   color: #61dafb;
 } */

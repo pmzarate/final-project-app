@@ -86,70 +86,71 @@ class ReportWindow extends Component {
     // if(this.state.lat !== "") {
     //   console.log('this is the state on render ', this.state)
 
-      return {
-        // <Fragment>
-        <div className="menu-page">
-            <div>
-                <p>Report Submitted</p>
-                <ViewMap lat={this.state.lat} lng={this.state.lng}/>
-            </div>
-          } else {
-      return (
+  
+          
+
+             <div className="reportWindow-page">
+              got here 
+             {/* console.log ("got to here report menu start") */}
+    {/* //         <div>
+    //             <p>Report Submitted</p>
+    //             <ViewMap lat={this.state.lat} lng={this.state.lng}/>
+    //         </div>
+    //       } else { */}
+    {/* //   return (
        
-          <ReportMenu toggleDialog={this.toggleDialog} toggleMarker={this.toggleMarker} />
-          {console.log(this.state)}
-          <div style={{ textAlign: 'center' }}>
-           <Button
-            variant="contained"
-            className="add-report"
-            onClick={this.toggleDialog}
-          >
-            Report it
-          </Button>
-          <Dialog open={this.state.open} onClose={this.toggleDialog}>
-            <DialogContent>
-              <form
-                onSubmit={this.handleSubmit}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "350px"
-                }}
-              >
-                <TextField
-                  id="username"
-                  placeholder="Reported by"
-                  value={this.state.username}
-                  onChange={this.handleTextChange}
-                  required
-                />
-                <TextField
-                  id="comments"
-                  placeholder="Describe Incident"
-                  value={this.state.comments}
-                  onChange={this.handleTextChange}
-                  required
-                />
-                <Button
-                  variant="primary"
-                  className="geolcation"
-                  color="secondary"
-                  type="submit"
-                  onClick={this.getLocation}
-                >
-                  Submit It
-                </Button>
-              </form>
-            </DialogContent>
-          </Dialog>
-          {/* </div> */}
-        {/* </Fragment> */}
-      );
-     
+    //       <ReportMenu toggleDialog={this.toggleDialog} toggleMarker={this.toggleMarker} />
+    //       {console.log(this.state)}
+    //       <div style={{ textAlign: 'center' }}>
+    //        <Button */}
+    {/* //         variant="contained"
+    //         className="add-report"
+    //         onClick={this.toggleDialog}
+    //       >
+    //         Report it
+    //       </Button>
+    //       <Dialog open={this.state.open} onClose={this.toggleDialog}>
+    //         <DialogContent>
+    //           <form */}
+    {/* //             onSubmit={this.handleSubmit}
+    //             style={{ */}
+    {/* //               display: "flex",
+    //               flexDirection: "column",
+    //               width: "350px"
+    //             }}
+    //           >
+    //             <TextField */}
+    {/* //               id="username"
+    //               placeholder="Reported by"
+    //               value={this.state.username}
+    //               onChange={this.handleTextChange}
+    //               required
+    //             />
+    //             <TextField */}
+    {/* //               id="comments"
+    //               placeholder="Describe Incident"
+    //               value={this.state.comments}
+    //               onChange={this.handleTextChange}
+    //               required
+    //             />
+    //             <Button */}
+    {/* //               variant="primary"
+    //               className="geolcation"
+    //               color="secondary"
+    //               type="submit"
+    //               onClick={this.getLocation}
+    //             >
+    //               Submit It
+    //             </Button>
+    //           </form> */}
+    {/* //         </DialogContent>
+    //       </Dialog> */}
+        {/* </div> */}
+        </div>
+         
     }
-    </div>
+  
 	}
   
-}
 
 export default withRouter(ReportWindow);
