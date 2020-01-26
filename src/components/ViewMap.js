@@ -1,6 +1,7 @@
 import React, { Component, Fragment , useState } from "react";
 import { Container, Paper, Chip } from "@material-ui/core";
 import GoogleMapReact from "google-map-react";
+import '../App.css'
 import Geocode from "react-geocode";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BarrierIcon from "../alertatx_images/barrier.png";

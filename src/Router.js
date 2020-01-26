@@ -1,14 +1,16 @@
 import React from 'react'
-import { Switch, Route, Redirect } from  'react-router-dom'
-import ReportMenu from './containers/ReportMenu'
+import { Switch, Route } from  'react-router'
+import Home from './containers/Home'
+import ReportMenu from './components/ReportMenu'
 import ViewMap from './containers/ViewMap'
-import AboutPage from './containers/AboutPage'
-import Login from './containers/Login'
+import AboutPage from './components/AboutPage'
+import Login from './components/Login'
 
 const Router = () => { 
     return (
         <Switch>
-            <Route exact path="/reportMenu" component={ReportMenu}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/reportMenu" component={ReportMenu}/>
             <Route path="/viewMap" component={ViewMap}/>
             <Route path="/about" component={AboutPage}/>
             <Route path="/login" component={Login}/>

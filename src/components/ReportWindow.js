@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
+import '../App.css'
 import {
 	Button,
 	TextField,
@@ -9,17 +10,17 @@ import {
 
 import ReportMenu from "./ReportMenu";
 import ViewMap from "../containers/ViewMap";
-// import GoogleMapReact from 'google-map-react';
-// import Geocode from 'react-geocode';
+import GoogleMapReact from 'google-map-react';
+import Geocode from 'react-geocode';
 
-// import LocationOnIcon from "@material-ui/icons/LocationOn";
-// import BarrierIcon from "../alertatx_images/barrier.png";
-// import DebrisIcon from "../alertatx_images/debris.png";
-// import AnimalIcon from "../alertatx_images/animal.png";
-// import BioIcon from '../alertatx_images/biohazard.png'
-// import RestroomIcon from "../alertatx_images/restroom.png";
-// import TentIcon from "../alertatx_images/tent.png";
-// import StreetLightIcon from "../alertatx_images/streetlight.png";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import BarrierIcon from "../alertatx_images/barrier.png";
+import DebrisIcon from "../alertatx_images/debris.png";
+import AnimalIcon from "../alertatx_images/animal.png";
+import BioIcon from '../alertatx_images/biohazard.png'
+import RestroomIcon from "../alertatx_images/restroom.png";
+import TentIcon from "../alertatx_images/tent.png";
+import StreetLightIcon from "../alertatx_images/streetlight.png";
 
 
 class ReportWindow extends Component {
@@ -82,29 +83,29 @@ class ReportWindow extends Component {
 	};
 
 	render() {
-    if(this.state.lat !== ""){
-      console.log('this is the state on render ', this.state)
+    // if(this.state.lat !== "") {
+    //   console.log('this is the state on render ', this.state)
 
+      return {
+        // <Fragment>
+        <div className="menu-page">
+            <div>
+                <p>Report Submitted</p>
+                <ViewMap lat={this.state.lat} lng={this.state.lng}/>
+            </div>
+          } else {
       return (
-        <div>
-        <p>Report Submitted</p>
-        <ViewMap lat={this.state.lat} lng={this.state.lng}/>
-        </div>
-      )
-    }
-    else{
-      return (
-        <Fragment>
+       
           <ReportMenu toggleDialog={this.toggleDialog} toggleMarker={this.toggleMarker} />
           {console.log(this.state)}
-          {/* <div style={{ textAlign: 'center' }}> */}
-          {/* <Button
+          <div style={{ textAlign: 'center' }}>
+           <Button
             variant="contained"
             className="add-report"
             onClick={this.toggleDialog}
           >
             Report it
-          </Button> */}
+          </Button>
           <Dialog open={this.state.open} onClose={this.toggleDialog}>
             <DialogContent>
               <form
@@ -142,11 +143,13 @@ class ReportWindow extends Component {
             </DialogContent>
           </Dialog>
           {/* </div> */}
-        </Fragment>
+        {/* </Fragment> */}
       );
+     
     }
-		
+    </div>
 	}
+  
 }
 
 export default withRouter(ReportWindow);

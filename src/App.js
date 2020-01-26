@@ -1,47 +1,19 @@
 import React from 'react';
-//import logo from './logo.svg';
-import './App.css';
-import ReportWindow from './containers/ReportWindow'
-import NavBar from './containers/NavBar'
-
-
+import NavBar from './components/NavBar'
+// import '../App.css'
+import Router from './Router'
+import { BrowserRouter } from  'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
 function App() {
- 
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar/>
-      </header>
-        <div>
-            <h1>
-              alertATX
-            </h1>
-            <p>
-              <h2>
-              Stay ALERT
-              </h2>
-              <br/>
-              See Something...
-              Report It
-            </p>
-        </div>
-       
-     
-       
-        {/* this is how to make a link in your app 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>*/}
-     
-      <br/>
-      <ReportWindow/> 
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <NavBar />
+        <Router />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
