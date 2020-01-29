@@ -39,7 +39,7 @@ export default function ViewMap() {
 				markers here
 			</ReactMapGL>
      	</div>
-	);
+	)
 }
 // const mapIcon = marker => {
 // 	if (marker === "DebrisIcon") {
