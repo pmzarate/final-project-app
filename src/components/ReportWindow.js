@@ -12,7 +12,7 @@ import ReportMenu from "./ReportMenu";
 import ViewMap from "../containers/ViewMap";
 import GoogleMapReact from 'google-map-react';
 import Geocode from 'react-geocode';
-
+import ReactMapGL from "react-map-gl"
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BarrierIcon from "../alertatx_images/barrier.png";
 import DebrisIcon from "../alertatx_images/debris.png";
@@ -40,6 +40,7 @@ class ReportWindow extends Component {
   toggleMarker = (marker) =>{
     this.setState({marker: marker})
   }
+
 	handleTextChange = e => {
 		const newState = { ...this.state };
 		newState[e.target.id] = e.target.value;
@@ -82,75 +83,61 @@ class ReportWindow extends Component {
 		console.log("Position Not Found, You're nowhere");
 	};
 
-	render() {
-    // if(this.state.lat !== "") {
-    //   console.log('this is the state on render ', this.state)
+  render() {
+   <div>coming soon</div>
+//        if(this.state.lat !== "") {
+//           // console.log('this is the state on render ', this.state)
+//           <div className="reportWindow-page">
+//             <p>Report Submitted</p>
+//               <ViewMap lat={this.state.lat} 
+//                        lng={this.state.lng}/>
+//                         } else {       
+//                     return (
+//                       toggleDialog={this.toggleDialog} 
+//                       toggleMarker={this.toggleMarker} />
+//                         <div style={{ textAlign: 'center' }}>
+//                       <Button 
+//                         variant="contained"
+//                         className="add-report"
+//                         onClick={this.toggleDialog}
+//                         >
+//                         Report it
+//                       </Button>
+//                           <Dialog open={this.state.open} 
+//                               onClose={this.toggleDialog}>
+//                               <DialogContent>
+//                                 <form 
+//                                   onSubmit={this.handleSubmit}
+//                                   style={{ flexDirection: "column",
+//                                   width: "350px"
+//                                   }}>
+//                                 <TextField
+//                                   id="username"
+//                                   value={this.state.username}
+//                                   onChange={this.handleTextChange}
+//                                   required/>
+//                                 <TextField
+//                                   id="comments"
+//                                   placeholder="Describe Incident"
+//                                   value={this.state.comments}
+//                                   onChange={this.handleTextChange}
+//                                   required/>
+//                                 <Button 
+//                                     variant="primary"
+//                                     className="geolcation"
+//                                     color="secondary"
+//                                     type="submit"
+//                                     onClick={this.getLocation}>
+//                                     Submit It   
+//                                 </Button>
+//                                 </form> 
+//                               </DialogContent>
+//                           </Dialog> 
+//                           )
+//           </div>;
+//         }
+// }
 
   
-          
 
-             <div className="reportWindow-page">
-              got here 
-             {/* console.log ("got to here report menu start") */}
-    {/* //         <div>
-    //             <p>Report Submitted</p>
-    //             <ViewMap lat={this.state.lat} lng={this.state.lng}/>
-    //         </div>
-    //       } else { */}
-    {/* //   return (
-       
-    //       <ReportMenu toggleDialog={this.toggleDialog} toggleMarker={this.toggleMarker} />
-    //       {console.log(this.state)}
-    //       <div style={{ textAlign: 'center' }}>
-    //        <Button */}
-    {/* //         variant="contained"
-    //         className="add-report"
-    //         onClick={this.toggleDialog}
-    //       >
-    //         Report it
-    //       </Button>
-    //       <Dialog open={this.state.open} onClose={this.toggleDialog}>
-    //         <DialogContent>
-    //           <form */}
-    {/* //             onSubmit={this.handleSubmit}
-    //             style={{ */}
-    {/* //               display: "flex",
-    //               flexDirection: "column",
-    //               width: "350px"
-    //             }}
-    //           >
-    //             <TextField */}
-    {/* //               id="username"
-    //               placeholder="Reported by"
-    //               value={this.state.username}
-    //               onChange={this.handleTextChange}
-    //               required
-    //             />
-    //             <TextField */}
-    {/* //               id="comments"
-    //               placeholder="Describe Incident"
-    //               value={this.state.comments}
-    //               onChange={this.handleTextChange}
-    //               required
-    //             />
-    //             <Button */}
-    {/* //               variant="primary"
-    //               className="geolcation"
-    //               color="secondary"
-    //               type="submit"
-    //               onClick={this.getLocation}
-    //             >
-    //               Submit It
-    //             </Button>
-    //           </form> */}
-    {/* //         </DialogContent>
-    //       </Dialog> */}
-        {/* </div> */}
-        </div>
-         
-    }
-  
-	}
-  
-
-export default withRouter(ReportWindow);
+export default withRouter(ReportWindow)

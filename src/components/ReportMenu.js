@@ -11,6 +11,7 @@ import BioIcon from '../alertatx_images/biohazard.png'
 import RestroomIcon from "../alertatx_images/restroom.png";
 import TentIcon from "../alertatx_images/tent.png";
 import StreetLightIcon from "../alertatx_images/streetlight.png";
+import LewdIcon from '../alertatx_images/lewd.png'
 //import ReportWindow from "./ReportWindow";
 
 export default function ReportMenu(props) {
@@ -78,7 +79,7 @@ export default function ReportMenu(props) {
 					width='20'
 					height='20'
 					alt="animal">
-					</img>Animal Waste / Carcass
+					</img>Animal Waste / Carcass 
 				</MenuItem>
 			     	<Divider />
 			    <MenuItem onClick={() => {
@@ -90,7 +91,7 @@ export default function ReportMenu(props) {
 						width='20'
 						height='20'
 						alt="barrier">
-					</img>Sidewalk / Trail Damage
+					</img> Sidewalk / Trail Damage
 				</MenuItem>
 		     		<Divider />
 			    <MenuItem onClick={() => {
@@ -102,7 +103,7 @@ export default function ReportMenu(props) {
 						width='20'
 						height='20'
 						alt="restroom">
-					</img>Public Restroom Access
+					</img> Public Restroom Access
 				</MenuItem>
 				    <Divider />
 				<MenuItem onClick={() => {
@@ -126,9 +127,20 @@ export default function ReportMenu(props) {
 						width='20'
 						height='20'
 						alt="bio">
-					</img>Bodily Fluids / Waste
+					</img> Bodily Fluids / Waste
 				</MenuItem>
-
+			      	<Divider />
+				<MenuItem onClick={() => {
+						props.toggleDialog();
+						props.toggleMarker("LewdIcon");
+					}}
+				>
+					<img src={LewdIcon} 
+						width='20'
+						height='20'
+						alt="bio">
+					</img>  Violent / Lewd Behavior
+				</MenuItem>
 			</Menu>
 		</div>
 	);
