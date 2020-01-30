@@ -12,6 +12,7 @@ import RestroomIcon from "../alertatx_images/restroom.png";
 import TentIcon from "../alertatx_images/tent.png";
 import StreetLightIcon from "../alertatx_images/streetlight.png";
 import LewdIcon from '../alertatx_images/lewd.png'
+import CrimeIcon from '../alertatx_images/crime.png'
 //import ReportWindow from "./ReportWindow";
 
 export default function ReportMenu(props) {
@@ -27,14 +28,14 @@ export default function ReportMenu(props) {
 	};
 
 	return (
-		<div className="menu-page">
-			<Button
-				variant="contained"
-				aria-controls="report-menu"
-				aria-haspopup="true"
+		<div>
+			<Button className="menu-btn"
+				// variant="contained"
+				// aria-controls="report-menu"
+				// aria-haspopup="true"
 				onClick={handleClick}
 			>
-				Make a Report
+				Report It!
 			</Button>
 		    	<Menu
 				id="report-menu"
@@ -79,7 +80,7 @@ export default function ReportMenu(props) {
 					width='20'
 					height='20'
 					alt="animal">
-					</img>Animal Waste / Carcass 
+					</img> Vicious Animal / Waste / Carcass 
 				</MenuItem>
 			     	<Divider />
 			    <MenuItem onClick={() => {
@@ -115,7 +116,7 @@ export default function ReportMenu(props) {
 						width='20'
 						height='20'
 						alt="tent">
-					</img>Public Camping / Vagrancy
+					</img>  Public Camping / Vagrancy
 				</MenuItem>
 			    	<Divider />
 				<MenuItem onClick={() => {
@@ -132,10 +133,10 @@ export default function ReportMenu(props) {
 			      	<Divider />
 				<MenuItem onClick={() => {
 						props.toggleDialog();
-						props.toggleMarker("LewdIcon");
+						props.toggleMarker("CrimeIcon");
 					}}
 				>
-					<img src={LewdIcon} 
+					<img src={CrimeIcon} 
 						width='20'
 						height='20'
 						alt="bio">

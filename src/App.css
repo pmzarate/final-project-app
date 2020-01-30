@@ -1,6 +1,9 @@
 .App{
-  background-image: linear-gradient(black, silver, black);
-  height: 1000px;
+  background-image: url("../src/alertatx_images/b&wATXpic4.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  /* min-height: 50%; */
 } 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -18,14 +21,13 @@
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   text-indent: 50px;
-  text-shadow: 8px 8px 16px black;
-  text-decoration: none;
-  
+  text-decoration: none;  
+
 } 
 
 h1 {
   display: flex;
-  height: 200px;
+  position: inherit;
   flex-direction: column;
   /* align-items: center; */
   /* justify-content: center; */
@@ -33,19 +35,45 @@ h1 {
   color:rgb(184,26,57);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-indent: 50px;
-  text-shadow: 10px 10px 20px black;
+  text-shadow: 15px 15px 30px black;
   letter-spacing: 5px;
+  margin-top:inherit;
+  margin-bottom: inherit;
+}
+
+h1:hover {
+  text-shadow: 7px 7px 14px white;
 }
 
 p h2 {
-  font-size:50px ;
-
+  display: flex;
+  position: inherit;
+  flex-direction: column;
+  font-size: 35px;
+  color: white;
+  text-shadow: 15px 15px 30px black;
+  text-indent: 80px;
 }
 
 /* about page css */
 
+.menu-btn {
+    
+    border-color: firebrick;
+    color: white;
+    box-shadow: 0 0 40px 40px maroon inset, 0 0 0 0 black;
+    transition: all 150ms ease-in-out;
+}
+
+.menu-btn:hover {
+      box-shadow: 0 0 10px 0 firebrick inset, 0 0 10px 4px white;
+   }
+  
+  
+
 .about-page {
     background-image: linear-gradient(black, silver, black);
+    width: 1200px;
     height: 1000px;
   } 
 

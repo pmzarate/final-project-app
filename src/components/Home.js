@@ -1,22 +1,21 @@
 import React from "react";
 //import logo from './logo.svg';
-import '../App.css'
-import ReportMenu from './ReportMenu';
+import "../App.css";
+import ReportMenu from "./ReportMenu";
 // import NavBar from './NavBar';
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function Home() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				{/* <NavBar /> */}
-			</header>
+			<header className="App-header">{/* <NavBar /> */}</header>
 			<div>
+			<p>
 				<h1>alertATX</h1>
-				<p>
-					<h2>Stay ALERT</h2>
-					<br />
-					See Something... Report It
+				
+					<h2> Be AWARE - Stay ALERT</h2>					
+					<h2>When YOU See It... <ReportMenu />
+					</h2>
 				</p>
 			</div>
 
@@ -30,8 +29,8 @@ function Home() {
           Learn React
         </a>*/}
 
-			<br />
-			<ReportMenu />
+			{/* <br />
+			 */}
 		</div>
 	);
 }

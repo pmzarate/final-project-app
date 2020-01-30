@@ -10,6 +10,7 @@ const NavBar = () => {
 		height: "50",
 		color: "white",
 		textDecoration: "none"
+		
 	};
 
 	return (

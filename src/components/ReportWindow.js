@@ -10,9 +10,9 @@ import {
 
 import ReportMenu from "./ReportMenu";
 import ViewMap from "../containers/ViewMap";
-import GoogleMapReact from 'google-map-react';
+//import GoogleMapReact from 'google-map-react';
 import Geocode from 'react-geocode';
-// import ReactMapGL from "react-map-gl"
+import ReactMapGL from "react-map-gl"
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BarrierIcon from "../alertatx_images/barrier.png";
 import DebrisIcon from "../alertatx_images/debris.png";
