@@ -29,10 +29,10 @@ export default function ReportMenu(props) {
 
 	return (
 		<div>
-			<Button className="menu-btn"
+			<Button class="menu-btn"
 				// variant="contained"
-				// aria-controls="report-menu"
-				// aria-haspopup="true"
+				//aria-controls="report-menu"
+				//aria-haspopup="true"
 				onClick={handleClick}
 			>
 				Report It!

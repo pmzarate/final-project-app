@@ -9,15 +9,15 @@ function Home() {
 	return (
 		<div className="App">
 			<header className="App-header">{/* <NavBar /> */}</header>
-			<div>
-			<p>
-				<h1>alertATX</h1>
-				
-					<h2> Be AWARE - Stay ALERT</h2>					
-					<h2>When YOU See It... <ReportMenu />
-					</h2>
+			<div className='app-title'>
+			    <h1>alertATX</h1>
+			    <h2> Be AWARE - Stay ALERT</h2>	
+		    </div>		
+			<p>				
+			    <h2>When YOU See It... <ReportMenu />
+				</h2>
 				</p>
-			</div>
+		
 
 			{/* this is how to make a link in your app 
         <a
@@ -31,7 +31,7 @@ function Home() {
 
 			{/* <br />
 			 */}
-		</div>
+			</div>
 	);
 }
 
