@@ -30,15 +30,17 @@ class ReportWindow extends Component {
 		comments: "",
 		lat: "",
 		lng: "",
-		marker: "",
-		timestamp: "",
-		id: 0
+		iconmarker: "",
+		dt: ""
+		
 	};
 
-	toggleDialog = () => this.setState({ open: !this.state.open });
+	toggleDialog = () => { 
+		this.setState({ open: !this.state.open });
+	};
 
-  toggleMarker = (marker) =>{
-    this.setState({marker: marker})
+    toggleMarker = (iconmarker) =>{
+    this.setState({iconmarker: iconmarker})
   }
 
 	handleTextChange = e => {
@@ -84,61 +86,63 @@ class ReportWindow extends Component {
 	};
 
   render() {
-   <div>coming soon</div>
-//        if(this.state.lat !== "") {
-//           // console.log('this is the state on render ', this.state)
-//           <div className="reportWindow-page">
-//             <p>Report Submitted</p>
-//               <ViewMap lat={this.state.lat} 
-//                        lng={this.state.lng}/>
-//                         } else {       
-//                     return (
-//                       toggleDialog={this.toggleDialog} 
-//                       toggleMarker={this.toggleMarker} />
-//                         <div style={{ textAlign: 'center' }}>
-//                       <Button 
-//                         variant="contained"
-//                         className="add-report"
-//                         onClick={this.toggleDialog}
-//                         >
-//                         Report it
-//                       </Button>
-//                           <Dialog open={this.state.open} 
-//                               onClose={this.toggleDialog}>
-//                               <DialogContent>
-//                                 <form 
-//                                   onSubmit={this.handleSubmit}
-//                                   style={{ flexDirection: "column",
-//                                   width: "350px"
-//                                   }}>
-//                                 <TextField
-//                                   id="username"
-//                                   value={this.state.username}
-//                                   onChange={this.handleTextChange}
-//                                   required/>
-//                                 <TextField
-//                                   id="comments"
-//                                   placeholder="Describe Incident"
-//                                   value={this.state.comments}
-//                                   onChange={this.handleTextChange}
-//                                   required/>
-//                                 <Button 
-//                                     variant="primary"
-//                                     className="geolcation"
-//                                     color="secondary"
-//                                     type="submit"
-//                                     onClick={this.getLocation}>
-//                                     Submit It   
-//                                 </Button>
-//                                 </form> 
-//                               </DialogContent>
-//                           </Dialog> 
-//                           )
-//           </div>;
-//         }
-// }
-
-  };
+        // if(this.state.lat !== "") {
+		  // console.log('this is the state on render ', this.state)
+	    return (
+	    <Fragment>
+		{console.log(this.state)}
+            <div style={{ textAlign: 'center'}}>
+                {/* <p>Report Submitted</p> */}
+                {/* <ViewMap lat={this.state.lat} 
+                lng={this.state.lng}/>
+                } else {       
+                return ( */}
+		        <Button 
+                    // variant="contained"
+                    className="add-report"
+                    onClick={this.toggleDialog}
+                    >
+                    Report it
+                </Button>
+					<Dialog 
+					    open={this.state.open} 
+                        onClose={this.toggleDialog}>
+                            <DialogContent>
+                                <form 
+                                  onSubmit={this.handleSubmit}
+                                  style={{ flexDirection: "column",
+                                  width: "350px"
+                                  }}>
+                                <TextField
+                                  id="username"
+                                  value={this.state.username}
+                                  onChange={this.handleTextChange}
+                                  required/>
+                                <TextField
+                                  id="comments"
+                                  placeholder="Describe Incident"
+                                  value={this.state.comments}
+                                  onChange={this.handleTextChange}
+                                  required/>
+                                <Button 
+                                    // variant="primary"
+                                    className="geolocation"
+                                    color="secondary"
+                                    type="submit"
+                                    onClick={this.getLocation}>
+                                    Submit It   
+                                </Button>
+                                </form> 
+                              </DialogContent>
+                          </Dialog> 
+                         
+		  </div>
+		  </Fragment>
+	)
+					
 }
+
+}
+
 
 export default withRouter(ReportWindow)

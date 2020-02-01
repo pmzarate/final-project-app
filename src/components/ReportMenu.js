@@ -11,9 +11,8 @@ import BioIcon from '../alertatx_images/biohazard.png'
 import RestroomIcon from "../alertatx_images/restroom.png";
 import TentIcon from "../alertatx_images/tent.png";
 import StreetLightIcon from "../alertatx_images/streetlight.png";
-import LewdIcon from '../alertatx_images/lewd.png'
 import CrimeIcon from '../alertatx_images/crime.png'
-//import ReportWindow from "./ReportWindow";
+import ReportWindow from "./ReportWindow";
 
 export default function ReportMenu(props) {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -46,8 +45,8 @@ export default function ReportMenu(props) {
 				TransitionComponent={Fade}
 			  	>
 	            <MenuItem onClick={() => {
-				    	props.toggleDialog();
-						props.toggleMarker("DebrisIcon");
+				    props.toggleDialog();
+					props.toggleMarker("DebrisIcon");
 					}}
 				>
 					<img src={DebrisIcon}

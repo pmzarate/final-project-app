@@ -9,12 +9,16 @@ const NavBar = () => {
 		size: "30",
 		height: "50",
 		color: "white",
-		textDecoration: "none"
-		
-	};
+		textDecoration: "none",
+		textAlign: "center"
+	}
 
 	return (
-		<AppBar position="relative" className="nav-list" style={style}>
+		<AppBar 
+			position="relative" 
+			className="nav-list" 
+			style={style}>
+				
 			<Toolbar>
 
 		     	<ul className="nav-list-item">
@@ -48,6 +52,6 @@ const NavBar = () => {
 			</Toolbar>
 		</AppBar>
 	);
-};
+}
 
 export default NavBar;

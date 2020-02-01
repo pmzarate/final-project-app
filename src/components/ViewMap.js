@@ -1,9 +1,8 @@
 import React, { Component, Fragment , useState } from "react";
 import { Container, Paper, Chip } from "@material-ui/core";
-import GoogleMapReact from "google-map-react";
 import '../App.css'
 import Geocode from "react-geocode";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+
 import BarrierIcon from "../alertatx_images/barrier.png";
 import DebrisIcon from "../alertatx_images/debris.png";
 import AnimalIcon from "../alertatx_images/animal.png";
@@ -24,7 +23,10 @@ export default function ViewMap() {
 		zoom: 13
 	})
 	
-
+	// map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
+	// 	if (error) throw error;
+	// 	if (!map.hasImage('cat')) map.addImage('cat', image);
+	//  })
 
 	return (
 	    <div>
@@ -123,3 +125,11 @@ export default function ViewMap() {
 // };
 
 // export default ViewMap;
+
+// var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+ 
+// mapboxgl.accessToken = 'pk.eyJ1IjoicG16YXJhdGUiLCJhIjoiY2s1dnZweWJ6MDBwNzNma2owc3dicWpkYSJ9.t8V4O3lp5QCJr7A1Z4d-HQ';
+// var map = new mapboxgl.Map({
+// container: 'YOUR_CONTAINER_ELEMENT_ID',
+// style: 'mapbox://styles/mapbox/streets-v11'
+// });

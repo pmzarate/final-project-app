@@ -3,32 +3,14 @@
   background-size: cover;
   background-position: center;
   height: 800px;
-  /* min-height: 50%; */
 } 
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
-/* home page css */
-
-/* .App-header  {
-  display: flex;
-  align-items: center; 
-  justify-content: space-evenly;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-indent: 50px;
-  text-decoration: none;  
-}  */
+/***************** home page css  ********************/
 
 h1 {
   display: flex;
   position: inherit;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   font-size: 160px;
   color:rgb(184,26,57);
@@ -66,8 +48,14 @@ p h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* report page css */
+/***************** navbar component ********************/
 
+.nav-list {
+  display: flex;
+  justify-content: center;
+}
+
+/***************** report page ********************/
 .menu-btn {
     width: 300px;
     height: 50px;
@@ -87,7 +75,7 @@ p h2 {
       color: white;
 } 
 
-/* about page css */
+/***************** about page ********************/
 
 .about-page {
     background-image: linear-gradient(black, silver, black);
@@ -106,19 +94,12 @@ p h2 {
   height: 1000px;
 } 
 
-/* tablet style */
+/***************** tablet style ********************/
 
 @media (max-width: 800px) {
 
-  .App{
-  background-image: url("../src/alertatx_images/b&wATXpic4.jpg");
-  background-size: cover;
-  background-position: center;
-  height: auto;
-  } 
-
   h1 {
-    font-size: 90px;
+    font-size: 80px;
     font-family: Impact;
     text-indent: 35px;
     text-shadow: 15px 15px 30px black;
@@ -128,70 +109,37 @@ p h2 {
     text-shadow: 7px 7px 14px silver;
   }
 
-  .app-title h2{
-    display: flex;
-    position: inherit; 
-    flex-direction: column;
+  .app-title h2 {
     font-size: 20px;
-    color: white;
     text-shadow: 15px 15px 30px black;
-    /* text-indent: 0px; */
-    font-family: Arial, Helvetica, sans-serif;
   }
   
   p h2 {
-    display: flex;
-    position: inherit; 
-    flex-direction: column;
     font-size: 20px;
-    color: white;
     text-shadow: 15px 15px 30px black;
-    text-indent: 80px;
-    font-family: Arial, Helvetica, sans-serif;
+    text-indent: 30px;
   }
+
   .menu-btn {
     width: 200px;
     height: 40px;
     border-radius: 15px;
-    border-color: firebrick;
     font-size: 20px;
-    background-image: linear-gradient( silver, black);
-    transition: all 150ms ease-in-out;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    text-decoration: none;
+  }
 }
 
-.menu-btn:hover {
-      box-shadow: 0 0 10px 0 firebrick inset, 0 0 10px 4px black;
-      color: white;
-} 
-
-  
-}
-
-/* mobile style */
+/***************** mobile style ********************/
 
 @media (max-width: 400px) {
-  .App{
-    background-image: url("../src/alertatx_images/b&wATXpic4.jpg");
-    background-size: cover;
-    background-position: center;
-    /* height: auto; */
-  } 
+
 
   h1 {
-    /* display: flex;
-    position: inherit;
-    flex-direction: column; */
-    /* align-items: center; */
     justify-content: center;
     color:rgb(184,26,57);
     font-family: Impact;
     text-shadow: 10px 10px 20px black;
     font-size: 20px;
- }
+  }
   
   h1:hover {
     text-shadow: 7px 7px 14px silver;
@@ -219,25 +167,18 @@ p h2 {
   }
 
   .menu-btn {
-    width: 100px;
+    width: 50px;
     height: 20px;
-    border-radius: 15px;
+    border-radius: 5px;
     border-color: firebrick;
     font-size: 20px;
-    background-image: linear-gradient( silver, black);
-    transition: all 150ms ease-in-out;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    text-decoration: none;
+  } 
 }
 
-.menu-btn:hover {
-      box-shadow: 0 0 10px 0 firebrick inset, 0 0 10px 4px black;
-      color: white;
-} 
   
-}
+/* ***** things to maybe use later ***** */
+
+
 /* .App-link {
   color: #61dafb;
 } */
@@ -248,5 +189,11 @@ p h2 {
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
 } */

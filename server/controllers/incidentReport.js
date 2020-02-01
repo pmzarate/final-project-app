@@ -25,7 +25,7 @@ const getReportByLocation = (req, res) => {
 
 const createIncident= (req, res) => {
   // INSERT INTO INCIDENT REPORT 
-  let sql = "INSERT INTO incidentReport (username, comment, lat, lng, marker, TIMESTAMP)  VALUES (req.body.incidentReport)"
+  let sql = "INSERT INTO incidentReport (username, comments, lat, lng, iconmarker, dt)  VALUES (req.body.incidentReport)"
   // WHAT GOES IN THE BRACKETS
   sql = mysql.format(sql, [req.body.createIncident])
 

@@ -23,10 +23,11 @@ app.use(express.static(path.join(__dirname, "atxalert/build")));
 
 app.use(incidentReportRoutes);
 
-// app.get('/', (req, res) => {
-//     console.log('you good bro')
-//     res.send(test)
-// });
+
+app.get('/', (req, res) => {
+    console.log('you good bro')
+    res.send(test)
+});
 
 // app.get('/clients', (req, res) => {
 //     res.send(clients)
