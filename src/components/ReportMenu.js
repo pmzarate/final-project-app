@@ -29,117 +29,96 @@ export default function ReportMenu(props) {
 	return (
 		<div>
 			<Button class="menu-btn"
-				// variant="contained"
-				//aria-controls="report-menu"
-				//aria-haspopup="true"
-				onClick={handleClick}
-			>
+				aria-controls="report-menu"
+				aria-haspopup="true"
+				onClick={handleClick}>
 				Report It!
 			</Button>
 		    	<Menu
 				id="report-menu"
 				anchorEl={anchorEl}
 				keepMounted
-				open={open}
+				open={Boolean(open)}
 				onClose={handleClose}
 				TransitionComponent={Fade}
 			  	>
-	            <MenuItem onClick={() => {
-				    props.toggleDialog();
-					props.toggleMarker("DebrisIcon");
-					}}
-				>
+	            <MenuItem onClick = {ReportWindow}>
 					<img src={DebrisIcon}
 						width='20'
 						height='20'
-						alt="debris"
-						>
-					</img>Debris / Garbage
+						alt="debris">
+					</img>
+					Debris / Garbage
 				</MenuItem>
 			    	<Divider />
-				<MenuItem onClick={() => {
-						props.toggleDialog();
-						props.toggleMarker("StreetLightIcon");
-					}}
-				>
+
+				<MenuItem onClick={ReportWindow}>
 					<img src={StreetLightIcon} 
 						width='20'
 						height='20'
 						alt="streetlght">
-					</img>Street Light Outage
+					</img>
+					Street Light Outage
 				</MenuItem>
 			    	<Divider />
-				<MenuItem
-					onClick={() => {
-						props.toggleDialog();
-						props.toggleMarker("AnimalIcon");
-					}}
-				>
+
+				<MenuItem onClick={ReportWindow}>
 					<img src={AnimalIcon}
 					width='20'
 					height='20'
 					alt="animal">
-					</img> Vicious Animal / Waste / Carcass 
+					</img> 
+					Vicious Animal / Waste / Carcass 
 				</MenuItem>
 			     	<Divider />
-			    <MenuItem onClick={() => {
-						props.toggleDialog();
-						props.toggleMarker("BarrierIcon");
-					}}
-				>
+
+			    <MenuItem onClick={ReportWindow}>
 					<img src={BarrierIcon} 
 						width='20'
 						height='20'
 						alt="barrier">
-					</img> Sidewalk / Trail Damage
+					</img> 
+					Sidewalk / Trail Damage
 				</MenuItem>
 		     		<Divider />
-			    <MenuItem onClick={() => {
-						props.toggleDialog();
-						props.toggleMarker("RestroomIcon");
-					}}
-				>
+
+			    <MenuItem onClick={ReportWindow}>
 					<img src={RestroomIcon} 
 						width='20'
 						height='20'
 						alt="restroom">
-					</img> Public Restroom Access
+					</img> 
+					Public Restroom Access
 				</MenuItem>
-				    <Divider />
-				<MenuItem onClick={() => {
-						props.toggleDialog();
-						props.toggleMarker("TentIcon");
-					}}
-				>
+     			    <Divider />
+
+				<MenuItem onClick={ReportWindow}>
 					<img src={TentIcon} 
 						width='20'
 						height='20'
 						alt="tent">
-					</img>  Public Camping / Vagrancy
+					</img>  
+					Public Camping / Vagrancy
 				</MenuItem>
 			    	<Divider />
-				<MenuItem onClick={() => {
-						props.toggleDialog();
-						props.toggleMarker("BioIcon");
-					}}
-				>
+
+				<MenuItem onClick={ReportWindow}>
 					<img src={BioIcon} 
 						width='20'
 						height='20'
 						alt="bio">
-					</img> Bodily Fluids / Waste
+					</img> 
+					Bodily Fluids / Waste
 				</MenuItem>
-			      	<Divider />
-				<MenuItem onClick={() => {
-						props.toggleDialog();
-						props.toggleMarker("CrimeIcon");
-					}}
-				>
+    		      	<Divider />
+
+				<MenuItem onClick={ReportWindow}>
 					<img src={CrimeIcon} 
 						width='20'
 						height='20'
 						alt="bio">
-					</img>  Violent / Lewd Behavior
+					</img>  
+					Violent / Lewd Behavior
 				</MenuItem>
 			</Menu>
 		</div>

@@ -13,10 +13,10 @@ function Home() {
 			    <h1>alertATX</h1>
 			    <h2> Be AWARE - Stay ALERT</h2>	
 		    </div>		
-			<p>				
+			<section>				
 			    <h2>When YOU See It... <ReportMenu />
 				</h2>
-				</p>
+				</section>
 		
 
 			{/* this is how to make a link in your app 

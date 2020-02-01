@@ -8,7 +8,7 @@ import {
 	DialogContent
 } from "@material-ui/core";
 
-import ReportMenu from "./ReportMenu";
+// import ReportMenu from "./ReportMenu";
 import ViewMap from "../containers/ViewMap";
 //import GoogleMapReact from 'google-map-react';
 import Geocode from 'react-geocode';
@@ -33,15 +33,15 @@ class ReportWindow extends Component {
 		iconmarker: "",
 		dt: ""
 		
-	};
+	}
 
-	toggleDialog = () => { 
+	toggleDialog = () => 
 		this.setState({ open: !this.state.open });
-	};
+	
 
-    toggleMarker = (iconmarker) =>{
+    toggleMarker = (iconmarker) =>
     this.setState({iconmarker: iconmarker})
-  }
+  
 
 	handleTextChange = e => {
 		const newState = { ...this.state };
@@ -59,12 +59,12 @@ class ReportWindow extends Component {
 		this.props.history.push("/");
 	};
 
-	showPosition = position => {
+	showPosition = position => 
 		this.setState({
 			lat: position.coords.latitude,
 			lng: position.coords.longitude
 		});
-	};
+	
 
 	getLocation = () => {
 		const success = pos => {
@@ -89,59 +89,60 @@ class ReportWindow extends Component {
         // if(this.state.lat !== "") {
 		  // console.log('this is the state on render ', this.state)
 	    return (
-	    <Fragment>
-		{console.log(this.state)}
-            <div style={{ textAlign: 'center'}}>
+	        <Fragment>
+				<div 
+					style={{ textAlign: 'center'}}
+					className="add-report">
                 {/* <p>Report Submitted</p> */}
                 {/* <ViewMap lat={this.state.lat} 
                 lng={this.state.lng}/>
                 } else {       
                 return ( */}
-		        <Button 
+		        {/* <Button 
                     // variant="contained"
                     className="add-report"
                     onClick={this.toggleDialog}
                     >
                     Report it
-                </Button>
+                </Button> */}
+				</div>
+				<div>
 					<Dialog 
 					    open={this.state.open} 
                         onClose={this.toggleDialog}>
                             <DialogContent>
                                 <form 
-                                  onSubmit={this.handleSubmit}
-                                  style={{ flexDirection: "column",
-                                  width: "350px"
-                                  }}>
-                                <TextField
-                                  id="username"
-                                  value={this.state.username}
-                                  onChange={this.handleTextChange}
-                                  required/>
-                                <TextField
-                                  id="comments"
-                                  placeholder="Describe Incident"
-                                  value={this.state.comments}
-                                  onChange={this.handleTextChange}
-                                  required/>
-                                <Button 
-                                    // variant="primary"
-                                    className="geolocation"
-                                    color="secondary"
-                                    type="submit"
-                                    onClick={this.getLocation}>
-                                    Submit It   
-                                </Button>
+                                    onSubmit={this.handleSubmit}
+                                    style={{ flexDirection: "column",
+                                    width: "350px"
+                                    }}>
+                                    <TextField
+										id="username"
+										palceholder="Posted by: "
+                                        value={this.state.username}
+                                        onChange={this.handleTextChange}
+                                        required/>
+                                    <TextField
+                                        id="comments"
+                                        placeholder="Describe Incident"
+                                        value={this.state.comments}
+                                        onChange={this.handleTextChange}
+                                        required/>
+                                    <Button 
+                                        // variant="primary"
+                                        className="geolocation"
+                                        color="secondary"
+                                        type="submit"
+                                        onClick={this.getLocation}>
+                                        Submit It   
+                                    </Button>
                                 </form> 
-                              </DialogContent>
-                          </Dialog> 
-                         
-		  </div>
-		  </Fragment>
-	)
-					
-}
-
+                            </DialogContent>
+                    </Dialog> 
+                </div>
+		    </Fragment>
+	    )
+    }
 }
 
 

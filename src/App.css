@@ -8,6 +8,7 @@
 /***************** home page css  ********************/
 
 h1 {
+  padding-top: 50px;
   display: flex;
   position: inherit;
   flex-direction: column;
@@ -23,28 +24,35 @@ h1 {
 }
 
 h1:hover {
-  text-shadow: 7px 7px 14px silver;
+  text-shadow: 7px 7px 14px black;
 }
 
-.app-title h2{
+.app-title h2 {
   display: flex;
   position: inherit; 
   flex-direction: column;
-  font-size: 35px;
+  font-size: 45px;
   color: white;
-  text-shadow: 15px 15px 30px black;
-  text-indent: 80px;
+  text-shadow: 5px 5px 10px firebrick;
+  text-indent: 90px;
   font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 60px;
+  padding-top: -80px;
+
 }
 
-p h2 {
+section {
   display: flex;
+  flex-direction: row;
+  text-align: center;
+  text-justify: auto;
+  flex-direction: row;
   position: inherit; 
   flex-direction: column;
   font-size: 35px;
   color: white;
   text-shadow: 15px 15px 30px black;
-  text-indent: 80px;
+  text-indent: 100px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -58,16 +66,17 @@ p h2 {
 /***************** report page ********************/
 .menu-btn {
     width: 300px;
-    height: 50px;
+    height: 70px;
     border-radius: 15px;
     border-color: firebrick;
-    font-size: 30px;
+    font-size: 40px;
     background-image: linear-gradient( silver, black);
     transition: all 150ms ease-in-out;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-decoration: none;
+   
 }
 
 .menu-btn:hover {
@@ -79,19 +88,28 @@ p h2 {
 
 .about-page {
     background-image: linear-gradient(black, silver, black);
-    width: 1200px;
-    height: 1000px;
-  } 
-
+    width: 1500px;
+    min-height: 1000px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 5px 5px 10px firebrick;
+    padding-top: 50px;
+    text-align: center;
+} 
 
 .login-page {
   background-image: linear-gradient(black, silver, black);
-  height: 1000px;
+  width: 1500px;
+  min-height: 1000px;
+  font-size: 25px;
+  color: white;
+  text-shadow: 5px 5px 10px firebrick;
+  padding-top: 50px;
 }
 
 .map-page  {
   background-image: linear-gradient(black, silver, black);
-  height: 1000px;
+  height: 1500px;
 } 
 
 /***************** tablet style ********************/
