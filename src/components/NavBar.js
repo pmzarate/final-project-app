@@ -10,7 +10,10 @@ const NavBar = () => {
 		height: "50",
 		color: "white",
 		textDecoration: "none",
-		textAlign: "center"
+		textAlign: "center",
+		display: "flexbox",
+        justifyContent: ""
+	
 	}
 
 	return (

@@ -12,7 +12,7 @@ import RestroomIcon from "../alertatx_images/restroom.png";
 import TentIcon from "../alertatx_images/tent.png";
 import StreetLightIcon from "../alertatx_images/streetlight.png";
 import CrimeIcon from '../alertatx_images/crime.png'
-import ReportWindow from "./ReportWindow";
+
 
 export default function ReportMenu(props) {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,6 +25,10 @@ export default function ReportMenu(props) {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+ 
+	const ReportWindow = () =>	{
+    props.menuClick()
+}
 
 	return (
 		<div>

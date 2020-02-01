@@ -3,7 +3,7 @@ const pool = require('../sql/connection')
 const { handleSQLError } = require('../sql/error')
 
 const getAllReports = (req, res) => {
-  // SELECT ALL USERS
+  // SELECT ALL INCIDENTREPORT
   pool.query("SELECT * FROM incidentReport", (err, rows) => {
     if (err) return handleSQLError(res, err)
     return res.json(rows);
@@ -25,10 +25,14 @@ const getReportByLocation = (req, res) => {
 
 const createIncident= (req, res) => {
   // INSERT INTO INCIDENT REPORT 
-  let sql = "INSERT INTO incidentReport (username, comments, lat, lng, iconmarker, dt)  VALUES (req.body.incidentReport)"
+  let sql = "INSERT INTO incidentReport (username, comments, lat, lng, iconmarker )  VALUES ( ?, ?, ?, ?, ?)";
   // WHAT GOES IN THE BRACKETS
-  sql = mysql.format(sql, [req.body.createIncident])
-
+  sql = mysql.format(sql, [req.body.username, req.body.comments,
+  req.body.lat,
+  req.body.lng,
+  req.body.iconmarker,
+ ])
+  console.log (res.body)
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err)
     return res.json({ newId: results.insertId });

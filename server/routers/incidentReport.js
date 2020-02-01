@@ -6,9 +6,9 @@ router.get('/', incidentController.getAllReports)
 
 router.get('/:id', incidentController.getReportByLocation)
 
-router.post('/', incidentController.createIncident)
+router.post('/createIncident', incidentController.createIncident)
 
-// router.put('/:id', incidentController.updateUserById)
+router.put('/:id', incidentController.createIncident)
 
 // router.delete('/:first_name', incidentController.deleteUserByFirstName)
 

@@ -10,8 +10,8 @@ import BioIcon from "../alertatx_images/biohazard.png";
 import RestroomIcon from "../alertatx_images/restroom.png";
 import TentIcon from "../alertatx_images/tent.png";
 import StreetLightIcon from "../alertatx_images/streetlight.png";
-import Marker from "./Marker.tsx";
-import ReactMapGL from "react-map-gl"
+import ReactMapGL, {Marker} from "react-map-gl"
+import CrimeIcon from '../alertatx_images/crime.png'
 
 
 export default function ViewMap() {
@@ -38,7 +38,30 @@ export default function ViewMap() {
 			    setViewport(viewport)
 				}}
 				>
-				markers here
+			        <Marker latitude={30.266666} longitude={-97.733330} offsetLeft={-20} offsetTop={-10}>
+					<img src={TentIcon}  width= "30px" height='30px'/>
+                    </Marker>
+					<Marker latitude={30.2651304} longitude={-97.7312843} offsetLeft={-20} offsetTop={-10}>
+					<img src={TentIcon} width= "30px" height='30px' />
+                    </Marker>
+					<Marker latitude={30.2632307} longitude={-97.7340522} offsetLeft={-20} offsetTop={-10}>
+					<img src={TentIcon} width= "30px" height='30px'/>
+                    </Marker>
+					<Marker latitude={30.267351} longitude={-97.734087} offsetLeft={-20} offsetTop={-10}>
+					<img src={TentIcon} width= "30px" height='30px'/>
+                    </Marker>
+					<Marker latitude={30.261876} longitude={-97.745234} offsetLeft={-20} offsetTop={-10}>
+					<img src={BioIcon} width= "30px" height='30px'/>
+                    </Marker>
+					<Marker latitude={30.261042} longitude={-97.758130} offsetLeft={-20} offsetTop={-10}>
+					<img src={BioIcon} width= "30px" height='30px'/>
+                    </Marker>
+					<Marker latitude={30.247474} longitude={-97.734423} offsetLeft={-20} offsetTop={-10}>
+					<img src={DebrisIcon} width= "30px" height='30px'/>
+                    </Marker>
+					<Marker latitude={30.251156} longitude={-97.735040} offsetLeft={-20} offsetTop={-10}>
+					<img src={CrimeIcon} width= "30px" height='30px'/>
+                    </Marker>
 			</ReactMapGL>
      	</div>
 	)

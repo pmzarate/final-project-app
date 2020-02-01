@@ -8,7 +8,7 @@ import {
 	DialogContent
 } from "@material-ui/core";
 
-// import ReportMenu from "./ReportMenu";
+import ReportMenu from "./ReportMenu";
 import ViewMap from "../containers/ViewMap";
 //import GoogleMapReact from 'google-map-react';
 import Geocode from 'react-geocode';
@@ -26,6 +26,7 @@ import StreetLightIcon from "../alertatx_images/streetlight.png";
 class ReportWindow extends Component {
 	state = {
 		open: false,
+		id: 0,
 		username: "",
 		comments: "",
 		lat: "",
@@ -72,8 +73,8 @@ class ReportWindow extends Component {
 			this.setState({
 				lat: pos.coords.latitude,
 				lng: pos.coords.longitude,
-        timestamp: pos.timestamp,
-        open: false
+                dt: pos.timestamp,
+                open:true
 			});
 			// debugger
 			return pos.coords;
@@ -87,27 +88,22 @@ class ReportWindow extends Component {
 
   render() {
         // if(this.state.lat !== "") {
-		  // console.log('this is the state on render ', this.state)
+		  console.log('made it to reportwindow ', this.state)
 	    return (
 	        <Fragment>
 				<div 
 					style={{ textAlign: 'center'}}
 					className="add-report">
-                {/* <p>Report Submitted</p> */}
-                {/* <ViewMap lat={this.state.lat} 
-                lng={this.state.lng}/>
-                } else {       
-                return ( */}
-		        {/* <Button 
-                    // variant="contained"
-                    className="add-report"
-                    onClick={this.toggleDialog}
-                    >
-                    Report it
-                </Button> */}
-				</div>
-				<div>
-					<Dialog 
+			    <ReportMenu
+			     	className="add-report"
+					onClick={this.toggleDialog}
+				    menuClick={() => {
+						this.setState({
+						    open:true
+						});
+					}}	/>
+				
+           		<Dialog 
 					    open={this.state.open} 
                         onClose={this.toggleDialog}>
                             <DialogContent>
@@ -141,9 +137,9 @@ class ReportWindow extends Component {
                     </Dialog> 
                 </div>
 		    </Fragment>
-	    )
+		)
     }
-}
 
+}
 
 export default withRouter(ReportWindow)
