@@ -5,3 +5,10 @@ export const addIncidentReport = (incidentReport) => {
     }
 }
 
+export const updateMarker = (marker) => {
+    return {
+        type: 'SELECT_MARKER',
+        value: marker
+    }
+}
+

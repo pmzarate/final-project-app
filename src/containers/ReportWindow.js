@@ -4,7 +4,8 @@ import { addIncidentReport } from '../redux/actions'
 
 const mapStateToProps = (state) => {
     return {
-        incidentReport: state.incidentReport
+        incidentReport: state.incidentReport,
+        selectedMarker: state.selectedMarker
     }
 }
 

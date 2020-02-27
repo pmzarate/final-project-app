@@ -39,9 +39,9 @@ export default function ViewMap() {
 				}}
 				>
 			        <Marker latitude={30.266666} longitude={-97.733330} offsetLeft={-20} offsetTop={-10}>
-					<img src={TentIcon}  width= "30px" height='30px'/>
+					<img src={TentIcon} width= "30px" height='30px'/>
                     </Marker>
-					<Marker latitude={30.2651304} longitude={-97.7312843} offsetLeft={-20} offsetTop={-10}>
+					{/* <Marker latitude={30.2651304} longitude={-97.7312843} offsetLeft={-20} offsetTop={-10}>
 					<img src={TentIcon} width= "30px" height='30px' />
                     </Marker>
 					<Marker latitude={30.2632307} longitude={-97.7340522} offsetLeft={-20} offsetTop={-10}>
@@ -61,7 +61,7 @@ export default function ViewMap() {
                     </Marker>
 					<Marker latitude={30.251156} longitude={-97.735040} offsetLeft={-20} offsetTop={-10}>
 					<img src={CrimeIcon} width= "30px" height='30px'/>
-                    </Marker>
+                    </Marker> */}
 			</ReactMapGL>
      	</div>
 	)

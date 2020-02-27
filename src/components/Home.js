@@ -4,9 +4,9 @@ import "../App.css";
 //import ReportMenu from "./ReportMenu";
 // import NavBar from './NavBar';
 //import { Link } from "react-router-dom";
-import ReportWindow from "./ReportWindow";
+import ReportWindow from "../containers/ReportWindow";
 
-function Home() {
+function Home(props) {
 	return (
 		<div className="App">
 			<header className="App-header"></header>

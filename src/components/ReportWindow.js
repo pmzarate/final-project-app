@@ -8,41 +8,42 @@ import {
 	DialogContent
 } from "@material-ui/core";
 
-import ReportMenu from "./ReportMenu";
-import ViewMap from "../containers/ViewMap";
-//import GoogleMapReact from 'google-map-react';
-import Geocode from 'react-geocode';
-import ReactMapGL from "react-map-gl"
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import BarrierIcon from "../alertatx_images/barrier.png";
-import DebrisIcon from "../alertatx_images/debris.png";
-import AnimalIcon from "../alertatx_images/animal.png";
-import BioIcon from '../alertatx_images/biohazard.png'
-import RestroomIcon from "../alertatx_images/restroom.png";
-import TentIcon from "../alertatx_images/tent.png";
-import StreetLightIcon from "../alertatx_images/streetlight.png";
+import ReportMenu from "../containers/ReportMenu";
+//import ViewMap from "../components/ViewMap";
+import Geocoder from 'react-native-geocoding';
+import Geocode from 'react-geocode'
+import ReactMapGL, { Marker } from "react-map-gl"
+//import LocationOnIcon from "@material-ui/icons/LocationOn";
+//import BarrierIcon from "../alertatx_images/barrier.png";
+//import DebrisIcon from "../alertatx_images/debris.png";
+//import AnimalIcon from "../alertatx_images/animal.png";
+//import BioIcon from '../alertatx_images/biohazard.png'
+//import RestroomIcon from "../alertatx_images/restroom.png";
+//import TentIcon from "../alertatx_images/tent.png";
+//import StreetLightIcon from "../alertatx_images/streetlight.png";
 
 
 class ReportWindow extends Component {
 	state = {
 		open: false,
-		id: 0,
 		username: "",
 		comments: "",
 		lat: "",
 		lng: "",
-		iconmarker: "",
+    	marker: "",
 		dt: ""
-		
 	}
 
 	toggleDialog = () => 
 		this.setState({ open: !this.state.open });
 	
 
-    toggleMarker = (iconmarker) =>
-    this.setState({iconmarker: iconmarker})
+    // toggleMarker = (label) =>
+    //     this.setState({label:label});
   
+	 componentWillMount() {
+		 this.getLocation()
+			 }
 
 	handleTextChange = e => {
 		const newState = { ...this.state };
@@ -52,34 +53,33 @@ class ReportWindow extends Component {
 	};
 
 	handleSubmit = e => {
+		alert("Report submitted, Thank You");
 		e.preventDefault();
-		const newReport = { ...this.state };
-		newReport.id =
-			this.props.incidentReport[this.props.incidentReport.length - 1].id + 1;
-		this.props.addIncidentReport(newReport);
-		this.props.history.push("/");
-	};
+		const newReport = { ...this.state }
+		// debugger
+		newReport.id = this.props.incidentReport[this.props.incidentReport.length - 1].id + 1
+		    this.props.addIncidentReport(newReport)
+		};
 
-	showPosition = position => 
-		this.setState({
-			lat: position.coords.latitude,
-			lng: position.coords.longitude
-		});
+	// 
 	
 
 	getLocation = () => {
+	
 		const success = pos => {
 			console.log(pos.coords);
 			this.setState({
 				lat: pos.coords.latitude,
 				lng: pos.coords.longitude,
+				marker: this.props.selectedMarker,
                 dt: pos.timestamp,
-                open:true
+                open:false
 			});
-			// debugger
+		   
 			return pos.coords;
 		};
 		const coords = navigator.geolocation.getCurrentPosition(success);
+		
 	};
 
 	geoError = () => {
@@ -110,27 +110,32 @@ class ReportWindow extends Component {
                                 <form 
                                     onSubmit={this.handleSubmit}
                                     style={{ flexDirection: "column",
-                                    width: "350px"
+									width: "180px",
+									height: "200px"
                                     }}>
                                     <TextField
 										id="username"
-										palceholder="Posted by: "
+										placeholder="Posted by: "
                                         value={this.state.username}
                                         onChange={this.handleTextChange}
                                         required/>
+										<br/>
                                     <TextField
                                         id="comments"
                                         placeholder="Describe Incident"
                                         value={this.state.comments}
                                         onChange={this.handleTextChange}
                                         required/>
+										<br/>
                                     <Button 
-                                        // variant="primary"
+										// variant="primary"
+										//onClick={this.getLocation}
                                         className="geolocation"
                                         color="secondary"
                                         type="submit"
-                                        onClick={this.getLocation}>
-                                        Submit It   
+                                        >
+                                        Submit It 
+										
                                     </Button>
                                 </form> 
                             </DialogContent>

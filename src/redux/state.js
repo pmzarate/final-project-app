@@ -10,5 +10,6 @@ export default {
             timestamp: '',
             id: 0
         }
-    ]
+    ],
+    selectedMarker:''
 };

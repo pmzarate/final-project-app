@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import '../App.css'
 import { Button, Divider } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
@@ -15,8 +15,10 @@ import CrimeIcon from '../alertatx_images/crime.png'
 
 
 export default function ReportMenu(props) {
+
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
+    // const marker= props.marker;
 
 	const handleClick = event => {
 		setAnchorEl(event.currentTarget);
@@ -26,12 +28,18 @@ export default function ReportMenu(props) {
 		setAnchorEl(null);
 	};
  
-	const ReportWindow = () =>	{
-    props.menuClick()
-}
-
+	const markerChoice = (e) =>	{
+	props.updateMarker(e.target.name)
+	debugger
+	}
+	
+    //const toggleMarker=> {
+	  // this.setState({marker:marker})
+	//};
+  
 	return (
 		<div>
+	        <Fragment>
 			<Button class="menu-btn"
 				aria-controls="report-menu"
 				aria-haspopup="true"
@@ -39,45 +47,48 @@ export default function ReportMenu(props) {
 				Report It!
 			</Button>
 		    	<Menu
-				id="report-menu"
-				anchorEl={anchorEl}
-				keepMounted
-				open={Boolean(open)}
-				onClose={handleClose}
-				TransitionComponent={Fade}
-			  	>
-	            <MenuItem onClick = {ReportWindow}>
-					<img src={DebrisIcon}
-						width='20'
-						height='20'
-						alt="debris">
-					</img>
-					Debris / Garbage
-				</MenuItem>
-			    	<Divider />
+			    	id="report-menu"
+			    	anchorEl={anchorEl}
+			     	keepMounted
+				    open={Boolean(open)}
+			     	onClose={handleClose}
+			    	TransitionComponent={Fade}>
+	                    <MenuItem onClick = {markerChoice}
+					    	name="debris">
+							 <img src={DebrisIcon}
+					            width='20'
+					        	height='20'
+					        	alt="debris"/>
+				               	Debris / Garbage
+			          	</MenuItem>
+		      	</Menu>
+			     	<Divider />
 
-				<MenuItem onClick={ReportWindow}>
+				{/* <MenuItem onClick={markerChoice}>
 					<img src={StreetLightIcon} 
+					    value="streetlight"
 						width='20'
 						height='20'
-						alt="streetlght">
+						alt="streetlight">
 					</img>
 					Street Light Outage
 				</MenuItem>
 			    	<Divider />
 
-				<MenuItem onClick={ReportWindow}>
+				<MenuItem onClick={markerChoice}>
 					<img src={AnimalIcon}
-					width='20'
-					height='20'
-					alt="animal">
+				        value={this.state.marker}
+				    	width='20'
+				    	height='20'
+				    	alt="animal">
 					</img> 
 					Vicious Animal / Waste / Carcass 
 				</MenuItem>
 			     	<Divider />
 
-			    <MenuItem onClick={ReportWindow}>
-					<img src={BarrierIcon} 
+			    <MenuItem onClick={markerChoice}>
+					<img src={BarrierIcon}
+				        value={this.state.marker}
 						width='20'
 						height='20'
 						alt="barrier">
@@ -86,8 +97,9 @@ export default function ReportMenu(props) {
 				</MenuItem>
 		     		<Divider />
 
-			    <MenuItem onClick={ReportWindow}>
-					<img src={RestroomIcon} 
+			    <MenuItem onClick={markerChoice}>
+					<img src={RestroomIcon}
+					    value={this.state.marker}
 						width='20'
 						height='20'
 						alt="restroom">
@@ -96,8 +108,9 @@ export default function ReportMenu(props) {
 				</MenuItem>
      			    <Divider />
 
-				<MenuItem onClick={ReportWindow}>
-					<img src={TentIcon} 
+				<MenuItem onClick={markerChoice}>
+					<img src={TentIcon}
+					    value={this.state.marker}
 						width='20'
 						height='20'
 						alt="tent">
@@ -106,8 +119,9 @@ export default function ReportMenu(props) {
 				</MenuItem>
 			    	<Divider />
 
-				<MenuItem onClick={ReportWindow}>
-					<img src={BioIcon} 
+				<MenuItem onClick={markerChoice}>
+					<img src={BioIcon}
+					    value={this.state.marker}
 						width='20'
 						height='20'
 						alt="bio">
@@ -116,15 +130,17 @@ export default function ReportMenu(props) {
 				</MenuItem>
     		      	<Divider />
 
-				<MenuItem onClick={ReportWindow}>
-					<img src={CrimeIcon} 
+				<MenuItem onClick={markerChoice}>
+					<img src={CrimeIcon}
+					    value={this.state.marker}
 						width='20'
 						height='20'
-						alt="bio">
+						alt="crime">
 					</img>  
 					Violent / Lewd Behavior
-				</MenuItem>
-			</Menu>
+				</MenuItem> */}
+			</Fragment>
 		</div>
-	);
+    )
 }
+
